@@ -13,13 +13,13 @@ def canUnlockAll(boxes):
 
 
 def unlockBoxes(boxes, open_boxes, index):
-    """Unlock the boxes which had their keys in the box"""
+    """Unlock the boxes which had their keys in boxes[index]"""
     if open_boxes.get(index):
         for key in boxes[index]:
             is_opened = open_boxes.get(key)
             if key < index and not is_opened:
                 open_boxes.update({key: True})
                 open_boxes = unlockBoxes(boxes, open_boxes, key)
-            if not is_opened:
+            elif not is_opened:
                 open_boxes.update({key: True})
     return open_boxes
