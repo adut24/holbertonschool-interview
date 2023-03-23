@@ -5,9 +5,9 @@
 def canUnlockAll(boxes):
     """Returns True if all boxes can be opened or False if not"""
     open_boxes = {0: True}
-    for i in range(1, len(boxes)):
-        open_boxes.update({i: False})
     for i in range(len(boxes)):
+        if i not in open_boxes.keys():
+            open_boxes.update({i: False})
         open_boxes = unlockBoxes(boxes, open_boxes, i)
     open_boxes = set(open_boxes.values())
     return True if len(open_boxes) == 1 else False
