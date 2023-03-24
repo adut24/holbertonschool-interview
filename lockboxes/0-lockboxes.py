@@ -9,7 +9,7 @@ def canUnlockAll(boxes):
         if i not in open_boxes.keys():
             open_boxes.update({i: False})
         open_boxes = unlockBoxes(boxes, open_boxes, i)
-    return True if len(set(open_boxes.values())) == 1 else False
+    return len(set(open_boxes.values())) == 1
 
 
 def unlockBoxes(boxes, open_boxes, index):
