@@ -18,13 +18,6 @@ binary_tree_t *binary_tree_node(binary_tree_t *parent, int value)
 	newNode->left = NULL;
 	newNode->right = NULL;
 	/* If the pointer to the parent node is NULL, return the new node */
-	if (!parent)
-		return (newNode);
-
 	newNode->parent = parent;
-	if (!parent->left)
-		parent->left = newNode;
-	else
-		parent->right = newNode;
 	return (newNode);
 }
