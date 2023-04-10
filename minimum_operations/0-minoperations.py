@@ -9,7 +9,7 @@ def minOperations(n):
     file = 'H'
     count = 0
     clipboard = ''
-    
+
     # First copy all
     clipboard, count = copy_all(file, count)
     # First paste
