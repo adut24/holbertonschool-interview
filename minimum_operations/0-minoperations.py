@@ -6,35 +6,32 @@ Module checking how many operations are needed to get n operations
 
 def minOperations(n):
     """Function checking if it's possible to get n operations"""
-    file = 'H'
+    file_len = 1
     count = 0
-    clipboard = ''
+    clipboard = 0
 
     # First copy all
-    clipboard, count = copy_all(file, count)
+    clipboard, count = copy_all(file_len, count)
     # First paste
-    file, count = paste(file, clipboard, count)
+    file_len, count = paste(file_len, clipboard, count)
     while True:
-        length_file = len(file)
-        if length_file == n:
+        if file_len == n:
             return count
-        if length_file > n:
+        if file_len > n:
             return 0
-        if n % length_file == 0:
-            clipboard, count = copy_all(file, count)
-            file, count = paste(file, clipboard, count)
-        else:
-            file, count = paste(file, clipboard, count)
+        if n % file_len == 0:
+            clipboard, count = copy_all(file_len, count)
+        file_len, count = paste(file_len, clipboard, count)
 
 
-def copy_all(file, count):
+def copy_all(file_len, count):
     """Function copying the file and increasing the count"""
-    return file, count + 1
+    return file_len, count + 1
 
 
-def paste(file, clipboard, count):
+def paste(file_len, clipboard, count):
     """
     Function pasting the content of the clipboard to the file.
     Increase the count too.
     """
-    return file + clipboard, count + 1
+    return file_len + clipboard, count + 1
