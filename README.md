@@ -3,7 +3,8 @@
 <br/>
 This repository is used to prepare for the coding interviews used during recruitement process.
 
-It currently contains 3 project:
+It currently contains 4 project:
 - [Lockboxes](./lockboxes/)
 - [Insert in sorted linked list](./insert_in_sorted_linked_list/)
 - [Heap Insert](./heap_insert/)
+- [Minimum Operations](./minimum_operations/)
