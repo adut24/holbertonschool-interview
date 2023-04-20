@@ -8,10 +8,11 @@
 void sandpiles_sum(int grid1[3][3], int grid2[3][3])
 {
 	int copy_grid[3][3];
+	int i, j;
 
-	for (int i = 0; i < 3; i++)
+	for (i = 0; i < 3; i++)
 	{
-		for (int j = 0; j < 3; j++)
+		for (j = 0; j < 3; j++)
 		{
 			grid1[i][j] += grid2[i][j];
 		}
@@ -20,9 +21,9 @@ void sandpiles_sum(int grid1[3][3], int grid2[3][3])
 	{
 		copy_sandpile(grid1, copy_grid);
 
-		for (int i = 0; i < 3; i++)
+		for (i = 0; i < 3; i++)
 		{
-			for (int j = 0; j < 3; j++)
+			for (j = 0; j < 3; j++)
 			{
 				if (copy_grid[i][j] > 3)
 					sandpile_toppling(grid1, copy_grid, i, j);
@@ -43,9 +44,11 @@ void sandpiles_sum(int grid1[3][3], int grid2[3][3])
  */
 int is_stable_sandpile(int grid[3][3])
 {
-	for (int i = 0; i < 3; i++)
+	int i, j;
+
+	for (i = 0; i < 3; i++)
 	{
-		for (int j = 0; j < 3; j++)
+		for (j = 0; j < 3; j++)
 		{
 			if (grid[i][j] > 3)
 				return (0);
@@ -61,12 +64,12 @@ int is_stable_sandpile(int grid[3][3])
  */
 void copy_sandpile(int src[3][3], int dst[3][3])
 {
-	for (int i = 0; i < 3; i++)
+	int i, j;
+
+	for (i = 0; i < 3; i++)
 	{
-		for (int j = 0; j < 3; j++)
-		{
+		for (j = 0; j < 3; j++)
 			dst[i][j] = src[i][j];
-		}
 	}
 }
 
@@ -81,8 +84,9 @@ void sandpile_toppling(int grid1[3][3], int grid2[3][3], int row, int column)
 {
 	int row_offsets[] = {-1, 0, 1, 0};
 	int col_offsets[] = {0, -1, 0, 1};
+	int i;
 
-	for (int i = 0; i < 4; i++)
+	for (i = 0; i < 4; i++)
 	{
 		int new_row = row + row_offsets[i];
 		int new_col = column + col_offsets[i];
