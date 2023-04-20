@@ -21,6 +21,12 @@ void sandpiles_sum(int grid1[3][3], int grid2[3][3])
 	{
 		copy_sandpile(grid1, copy_grid);
 
+		if (!is_stable_sandpile(grid1))
+		{
+			printf("=\n");
+			print_grid(grid1);
+		}
+		
 		for (i = 0; i < 3; i++)
 		{
 			for (j = 0; j < 3; j++)
@@ -28,11 +34,6 @@ void sandpiles_sum(int grid1[3][3], int grid2[3][3])
 				if (copy_grid[i][j] > 3)
 					sandpile_toppling(grid1, copy_grid, i, j);
 			}
-		}
-		if (!is_stable_sandpile(grid1))
-		{
-			printf("=\n");
-			print_grid(grid1);
 		}
 	}
 }
