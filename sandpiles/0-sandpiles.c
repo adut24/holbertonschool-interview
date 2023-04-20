@@ -29,11 +29,6 @@ void sandpiles_sum(int grid1[3][3], int grid2[3][3])
 					sandpile_toppling(grid1, copy_grid, i, j);
 			}
 		}
-		if (!is_stable_sandpile(grid1))
-		{
-			printf("=\n");
-			print_grid(grid1);
-		}
 	}
 }
 
@@ -101,26 +96,5 @@ void sandpile_toppling(int grid1[3][3], int grid2[3][3], int row, int column)
 		}
 		else
 			grid1[row][column]--;
-	}
-}
-
-/**
- * print_grid - Print 3x3 grid
- * @grid: 3x3 grid
- *
- */
-static void print_grid(int grid[3][3])
-{
-	int i, j;
-
-	for (i = 0; i < 3; i++)
-	{
-		for (j = 0; j < 3; j++)
-		{
-			if (j)
-				printf(" ");
-			printf("%d", grid[i][j]);
-		}
-		printf("\n");
 	}
 }
