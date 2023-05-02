@@ -36,7 +36,7 @@ for line in sys.stdin:
     count += 1
     line_parsed = line.split()
     length_line = len(line_parsed)
-    if length_line < 1:
+    if length_line < 2:
         continue
     file_size += int(line_parsed[length_line - 1])
     if line_parsed[length_line - 2] not in stats.keys():
