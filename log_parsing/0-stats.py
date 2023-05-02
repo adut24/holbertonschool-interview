@@ -35,12 +35,13 @@ signal.signal(signal.SIGINT, signal_handler)
 for line in sys.stdin:
     count += 1
     line_parsed = line.split()
-    if len(line_parsed) != 9:
+    length_line = len(line_parsed)
+    if length_line < 1:
         continue
-    file_size += int(line_parsed[8])
-    if line_parsed[7] not in stats.keys():
+    file_size += int(line_parsed[length_line - 1])
+    if line_parsed[length_line - 2] not in stats.keys():
         continue
-    stats[line_parsed[7]] += 1
+    stats[line_parsed[length_line - 2]] += 1
     if count % 10 == 0:
         print_infos()
 print_infos()
