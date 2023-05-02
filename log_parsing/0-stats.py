@@ -40,6 +40,8 @@ for line in sys.stdin:
     file_size += int(line_parsed[8])
     if line_parsed[7] in stats.keys():
         stats[line_parsed[7]] += 1
+    else:
+        continue
     if count % 10 == 0:
         print_infos()
 print_infos()
