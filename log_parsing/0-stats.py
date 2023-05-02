@@ -37,9 +37,9 @@ for line in sys.stdin:
     line_parsed = line.split()
     if len(line_parsed) != 9:
         continue
+    file_size += int(line_parsed[8])
     if line_parsed[7] not in stats.keys():
         continue
-    file_size += int(line_parsed[8])
     stats[line_parsed[7]] += 1
     if count % 10 == 0:
         print_infos()
