@@ -26,7 +26,7 @@ def signal_handler(sig, frame):
 def print_infos():
     """Prints the stats obtained from the file"""
     print("File size: {}".format(file_size))
-    for key, value in stats.items():
+    for key, value in sorted(stats.items()):
         if value != 0:
             print("{:s}: {:d}".format(key, value))
 
@@ -38,7 +38,8 @@ for line in sys.stdin:
     if len(line_parsed) != 9:
         continue
     file_size += int(line_parsed[8])
-    stats[line_parsed[7]] += 1
+    if line_parsed[7] in stats.keys():
+        stats[line_parsed[7]] += 1
     if count % 10 == 0:
         print_infos()
 print_infos()
