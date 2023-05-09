@@ -7,55 +7,18 @@
 */
 int check_cycle(listint_t *list)
 {
-	address_t *nodes_address = NULL;
+	listint_t *slow = list, *fast = list;
 
 	if (!list)
 		return (0);
 
-	while (list)
+	while (slow && fast)
 	{
-		if (!add_address(&nodes_address, list))
+		slow = slow->next;
+		fast = fast->next->next;
+
+		if (slow == fast)
 			return (1);
-		list = list->next;
 	}
 	return (0);
-}
-
-/**
- * add_address - add the address of the node and verify it's not in the list
- * @addresses: linked list of the addresses
- * @list: node to check
- * Return: NULL if the address is in the list or the address of the new node
-*/
-address_t *add_address(address_t **addresses, listint_t *list)
-{
-	address_t *node = NULL, *head = *addresses;
-
-	if (!*addresses)
-	{
-		node = malloc(sizeof(address_t));
-		if (!node)
-			return (NULL);
-
-		node->address = list;
-		node->next = NULL;
-		*addresses = node;
-		return (node);
-	}
-
-	while (head->next)
-	{
-		if (head->address == list)
-			return (NULL);
-		head = head->next;
-	}
-	node = malloc(sizeof(address_t));
-	if (!node)
-		return (NULL);
-
-	node->address = list;
-	node->next = NULL;
-	head->next = node;
-
-	return (node);
 }
