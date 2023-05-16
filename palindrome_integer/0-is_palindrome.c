@@ -7,9 +7,7 @@
 */
 int is_palindrome(unsigned long n)
 {
-	unsigned long numberReversed = reverse_number(n);
-
-	return (n == numberReversed);
+	return (n == reverse_number(n));
 }
 
 /**
