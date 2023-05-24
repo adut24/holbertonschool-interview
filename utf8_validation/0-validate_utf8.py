@@ -11,7 +11,7 @@ def validUTF8(data):
             continue
         binary = format(num, '08b')
         if n_bytes == 0:
-            #Gets the number of bytes used for the current character
+            # Gets the number of bytes used for the current character
             n_bytes = binary.find('0')
             if n_bytes == 1 or n_bytes > 4:
                 return False
