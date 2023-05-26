@@ -4,20 +4,29 @@
 
 def validUTF8(data):
     """Checks if the data set given is a valid UTF-8 encoding"""
-    n_bytes = 0
-    for num in data:
-        if n_bytes == 0:
-            mask = 128
-            # Counting the ones at the start to know the number of bytes
-            while mask & num:
-                n_bytes += 1
-                mask = mask * 2
-            if n_bytes == 0:
+    num_bytes = 0
+    for byte in data:
+        # Check if the byte is a continuation byte
+        if num_bytes == 0:
+            # 2-bytes character
+            if byte >> 5 == 0b110:
+                num_bytes = 1
+            # 3-bytes character
+            elif byte >> 4 == 0b1110:
+                num_bytes = 2
+            # 4-bytes character
+            elif byte >> 3 == 0b11110:
+                num_bytes = 3
+            # ASCII character
+            elif byte >> 7 == 0b0:
                 continue
-            if n_bytes == 1 or n_bytes > 4:
+            # Invalid character
+            else:
                 return False
-        # If the first bit is not 1 and the second not 0
-        elif not (num & 128 and not (num & 64)):
-            return False
-        n_bytes -= 1
-    return n_bytes == 0
+        else:
+            # Check if the byte is a valid continuation byte
+            if byte >> 6 != 0b10:
+                return False
+            num_bytes -= 1
+    # Check if there are any incomplete characters
+    return num_bytes == 0
