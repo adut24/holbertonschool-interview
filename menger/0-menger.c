@@ -38,7 +38,6 @@ void menger(int level)
 			else
 				printf("#");
 		}
-		if (y < size - 1)
-			printf("\n");
+		printf("\n");
 	}
 }
