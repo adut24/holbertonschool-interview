@@ -2,6 +2,10 @@
 #include <math.h>
 #include "menger.h"
 
+/**
+ * menger - Draws a Menger sponge
+ * @level: level of the sponge
+*/
 void menger(int level)
 {
 	int size, i, j, x, y, empty = 0;
