@@ -1,5 +1,4 @@
 # Menger sponge
-![3D Menger sponge](https://s3.eu-west-3.amazonaws.com/hbtn.intranet/uploads/medias/2018/6/970692c4e47bd0546db8.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4MYA5JM5DUTZGMZG%2F20230624%2Feu-west-3%2Fs3%2Faws4_request&X-Amz-Date=20230624T135355Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=e75a16e9b15ec9ee64fe2f4e43e201369171651d4653624cf469c00ea3e2d358)
 [![3D Menger sponge video](https://img.youtube.com/vi/d-dI_pu_Z0g/0.jpg)](https://youtu.be/d-dI_pu_Z0g)
 
 ## 0. 2D Menger sponge
