@@ -47,6 +47,8 @@ avl_t *sorted_array_to_avl_recursive(int *array, int start, int end)
 		return (NULL);
 
 	root = add_node(array[mid]);
+	if (!root)
+		return (NULL);
 	root->left = sorted_array_to_avl_recursive(array, start, mid - 1);
 	if (root->left)
 		root->left->parent = root;
