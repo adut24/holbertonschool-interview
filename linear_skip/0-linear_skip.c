@@ -1,6 +1,6 @@
 #include "search.h"
 
-/***
+/**
  * linear_skip - Checks if a value is inside
  * @head: skip list to check
  * @value: value to find
@@ -8,10 +8,12 @@
 */
 skiplist_t *linear_skip(skiplist_t *head, int value)
 {
-	skiplist_t *fast = head->express, *prev = head;
+	skiplist_t *fast = NULL, *prev = head;
 
 	if (!head)
 		return (NULL);
+
+	fast = head->express;
 
 	while (fast->express)
 	{
