@@ -3,11 +3,11 @@ const request = require('request');
 
 /**
  * Get the name of the character
- * @param {String} character_url url of the character in the API
+ * @param {String} characterUrl url of the character in the API
  */
-function getName(character_url) {
+function getName (characterUrl) {
   return new Promise((resolve, reject) => {
-    request.get(character_url, (error, response, body) => {
+    request.get(characterUrl, (error, response, body) => {
       if (error) {
         reject(error);
       } else {
