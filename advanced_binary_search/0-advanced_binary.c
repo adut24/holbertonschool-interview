@@ -1,0 +1,66 @@
+#include "search_algos.h"
+#include <stdio.h>
+
+/**
+ * advanced_binary -
+ * @array: array to search
+ * @size: size of the array
+ * @value: value to search for
+ * Return: -1 or the index of the value
+ */
+int advanced_binary(int *array, size_t size, int value)
+{
+	if (!array)
+		return (-1);
+	return (binary_recursion(array, size, 0, size - 1, value));
+}
+
+/**
+ * binary_recursion -
+ * @array:
+ * @size:
+ * @low:
+ * @high:
+ * @value:
+ * Return:
+ */
+int binary_recursion(int *array, size_t size, size_t low, size_t high,
+					 int value)
+{
+	size_t middle = low + (high - low) / 2;
+
+	if (middle >= size)
+		return (-1);
+
+	print_array(array, low, high + 1);
+
+	if (array[middle] > value)
+		return (binary_recursion(array, size, low, middle - 1, value));
+	else if (array[middle] < value)
+		return (binary_recursion(array, size, middle + 1, high, value));
+
+	if (array[middle] == value && middle == low)
+		return middle;
+
+	return (binary_recursion(array, size, low, middle, value));
+}
+
+/**
+ * print_array - Prints the part of the array that is being searched
+ * @array: array to print
+ * @start: starting index
+ * @end: ending index
+ */
+void print_array(int *array, size_t start, size_t end)
+{
+	size_t i;
+
+	printf("Searching in array: ");
+	for (i = start; i < end; i++)
+	{
+		if (i != end - 1)
+			printf("%d, ", array[i]);
+		else
+			printf("%d\n", array[i]);
+	}
+}
