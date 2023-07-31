@@ -32,7 +32,7 @@ int binary_recursion(int *array, size_t size, size_t low, size_t high,
 	if (middle >= size)
 		return (-1);
 
-	print_array(array, low, high + 1);
+	print_array(array, low, high);
 
 	if (array[middle] > value)
 		return (binary_recursion(array, size, low, middle, value));
@@ -56,9 +56,9 @@ void print_array(int *array, size_t start, size_t end)
 	size_t i;
 
 	printf("Searching in array: ");
-	for (i = start; i < end; i++)
+	for (i = start; i <= end; i++)
 	{
-		if (i != end - 1)
+		if (i != end)
 			printf("%d, ", array[i]);
 		else
 			printf("%d\n", array[i]);
