@@ -27,10 +27,10 @@ def count_words(subreddit, word_list, after='', count={}):
                     count[word] = 1
                 else:
                     count[word] += 1
-    sorted_dict = dict(sorted(count.items(),
-                              key=operator.itemgetter(1),
-                              reverse=True))
     if after is None:
+        sorted_dict = dict(sorted(count.items(),
+                                  key=operator.itemgetter(1),
+                                  reverse=True))
         for key, value in sorted_dict.items():
             if value > 0:
                 print('{}: {}'.format(key, value))
