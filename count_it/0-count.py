@@ -9,9 +9,9 @@ import requests
 def count_words(subreddit, word_list, after='', count={}):
     """
     Counts the number of occurences of the word in word_list on a specific
-    subreddit
+    subreddit.
     """
-    url='https://www.reddit.com/r/{}/hot.json'.format(subreddit)
+    url = 'https://www.reddit.com/r/{}/hot.json'.format(subreddit)
     if after != '':
         url += '?after={}'.format(after)
     user = {'User-Agent': 'CountIt'}
@@ -21,9 +21,9 @@ def count_words(subreddit, word_list, after='', count={}):
     data = response.json().get('data')
     after = data.get('after')
     for post in data.get('children'):
-        for word in post.get('data').get('title').lower().split():
-            if word in [word.lower() for word in word_list]:
-                if word not in count:
+        for word in post.get('data').get('title').casefold().split():
+            if word in [keyword.casefold() for keyword in word_list]:
+                if word not in count.keys():
                     count[word] = 1
                 else:
                     count[word] += 1
@@ -36,4 +36,3 @@ def count_words(subreddit, word_list, after='', count={}):
                 print('{}: {}'.format(key, value))
         return
     count_words(subreddit, word_list, after, count)
-
