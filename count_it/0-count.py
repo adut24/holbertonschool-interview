@@ -21,12 +21,14 @@ def count_words(subreddit, word_list, after='', count={}):
     data = response.json().get('data')
     after = data.get('after')
     for post in data.get('children'):
-        for word in post.get('data').get('title').casefold().split():
-            if word in [keyword.casefold() for keyword in word_list]:
-                if word not in count.keys():
-                    count[word] = 1
-                else:
-                    count[word] += 1
+        for word in post.get('data').get('title').lower().split():
+            for keyword in [w.lower() for w in word_list]:
+                if word == keyword:
+                    if word not in count.keys():
+                        count[word] = 1
+                    else:
+                        count[word] += 1
+                    break
     if after is None:
         sorted_dict = dict(sorted(count.items(),
                                   key=operator.itemgetter(1),
