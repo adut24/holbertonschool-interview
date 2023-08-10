@@ -28,7 +28,7 @@ def count_words(subreddit, word_list, after='', count={}):
                     count[word] += 1
     if after is None:
         sorted_dict = dict(sorted(count.items(),
-                                  key=lambda item: (-item[1], item[0])))
+                                   key=lambda item: (-item[1], item[0])))
         for key, value in sorted_dict.items():
             if value > 0:
                 print('{}: {}'.format(key, value))
