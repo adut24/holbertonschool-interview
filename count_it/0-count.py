@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 """0-count module"""
-import operator
 import requests
 
 
@@ -24,9 +23,7 @@ def count_words(subreddit, word_list, after='', count={}):
 
 def print_result(count):
     """Prints the result of the search."""
-    sorted_dict = dict(sorted(count.items(),
-                              key=operator.itemgetter(1),
-                              reverse=True))
+    sorted_dict = dict(sorted(count.items(), key=lambda x: x[1], reverse=True))
     for key, value in sorted_dict.items():
         if value > 0:
             print('{}: {}'.format(key, value))
