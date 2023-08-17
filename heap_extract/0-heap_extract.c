@@ -94,6 +94,9 @@ heap_t *find_last_node(heap_t *node)
 	if (!node)
 		return (NULL);
 
+	if (!node->parent && !node->left && !node->right)
+		return (NULL);
+
 	queue[rear++] = node;
 
 	while (front < rear)
