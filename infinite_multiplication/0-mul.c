@@ -5,7 +5,7 @@
  * main - Entry point
  * @argc: number of arguments
  * @argv: array of arguments
- * Return:
+ * Return: 0 , 1 or 98
  */
 int main(int argc, char **argv)
 {
