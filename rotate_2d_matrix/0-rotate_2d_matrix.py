@@ -12,4 +12,3 @@ def rotate_2d_matrix(matrix):
             matrix[length - j - 1][i] = matrix[length - i - 1][length - j - 1]
             matrix[length - i - 1][length - j - 1] = matrix[j][length - i - 1]
             matrix[j][length - i - 1] = tmp
-            
