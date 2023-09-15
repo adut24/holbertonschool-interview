@@ -61,7 +61,7 @@ void merge(int *array, int *work_array, size_t left_start, size_t left_end,
 	while (j < right_start + right_size)
 		array[k++] = work_array[j++];
 
-	printf("[Done]:");
+	printf("[Done]: ");
 	print_work_array(array, left_start, right_end);
 }
 
