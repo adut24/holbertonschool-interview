@@ -8,7 +8,7 @@ def makeChange(coins, total):
         return 0
     nbCoin = 0
     for coin in sorted(coins, reverse=True):
-        if total == 0:
+        if total <= 0:
             break
         while total >= coin:
             nbCoin += 1
