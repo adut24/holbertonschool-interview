@@ -1,16 +1,15 @@
 #include "list.h"
 
 /**
- * @brief
- *
+ * add_node_end - Add a node at the end of the list
  * @list: Double linked list
  * @str: string to copy
- * Return:
+ * Return: NULL in case of failure or the address of the new node
  */
 List *add_node_end(List **list, char *str)
 {
-	static List *firstNode = NULL;
-	static List *lastNode = NULL;
+	static List *firstNode;
+	static List *lastNode;
 	List *newNode = NULL, *head = NULL;
 
 	if (!list || !*str)
@@ -41,10 +40,16 @@ List *add_node_end(List **list, char *str)
 	return (newNode);
 }
 
+/**
+ * add_node_begin - Add a node at the beginning of the list
+ * @list: Double linked list
+ * @str: string to copy
+ * Return: NULL in case of failure or the address of the new node
+ */
 List *add_node_begin(List **list, char *str)
 {
-	static List *startNode = NULL;
-	static List *endNode = NULL;
+	static List *startNode;
+	static List *endNode;
 	List *newNode = NULL, *head = NULL;
 
 	if (!list || !*str)
@@ -95,5 +100,5 @@ List *create_node(char *str)
 	node->prev = NULL;
 	node->str = strdup(str);
 
-	return (node);
+	return (node->str ? node : NULL);
 }
