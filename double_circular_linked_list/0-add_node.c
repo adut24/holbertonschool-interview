@@ -69,6 +69,7 @@ List *add_node_begin(List **list, char *str)
 		head = *list;
 		while (head != startNode)
 			head = head->prev;
+
 		head->prev = newNode;
 		newNode->next = head;
 		endNode->next = newNode;
@@ -96,8 +97,8 @@ List *create_node(char *str)
 	if (!node)
 		return (NULL);
 
-	node->next = NULL;
-	node->prev = NULL;
+	node->next = node;
+	node->prev = node;
 	node->str = strdup(str);
 
 	return (node->str ? node : NULL);

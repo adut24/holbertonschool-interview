@@ -12,3 +12,4 @@ COPY list.h /app/
 
 RUN gcc -Wall -Wextra -Werror -pedantic 0-main.c 0-add_node.c -o program
 
+CMD ["./program"]
