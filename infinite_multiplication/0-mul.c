@@ -1,10 +1,12 @@
 #include "holberton.h"
 
 /**
- * main - Entry point
+ * main - multiplies two positive numbers
+ *
  * @argc: number of arguments
  * @argv: array of arguments
- * Return: 0 , 1 or 98
+ *
+ * Return: 0 in case of success, 98 in case of failure, 1 if argc != 3
  */
 int main(int argc, char **argv)
 {
@@ -33,9 +35,11 @@ int main(int argc, char **argv)
 }
 
 /**
- * _puts - prints the string passed as an argument
+ * _puts - prints a string
+ *
  * @s: string to print
- * Return: the length of what was printed
+ *
+ * Return: the length of the string
  */
 int _puts(char *s)
 {
@@ -48,8 +52,10 @@ int _puts(char *s)
 }
 
 /**
- * _strlen - calculates the length of the string
+ * _strlen - Finds the length of a string
+ *
  * @s: string to find the length
+ *
  * Return: the length of the string
  */
 int _strlen(char *s)
@@ -63,9 +69,11 @@ int _strlen(char *s)
 }
 
 /**
- * verify_arg - verifies if the string contains things other than number
+ * verify_arg - Verifies if the argument is a number or not
+ *
  * @num: string to verify
- * Return: 0 in case of failure or 1
+ *
+ * Return: 1 if the argument is a number, 0 otherwise
  */
 char verify_arg(char *num)
 {
@@ -81,7 +89,8 @@ char verify_arg(char *num)
 }
 
 /**
- * multiply_numbers - multiplies the two numbers
+ * multiply_numbers - Multiplies two numbers
+ *
  * @num1: first number as a string
  * @num2: second number as a string
  * @result: array of int to contain the product
@@ -113,7 +122,8 @@ void multiply_numbers(char *num1, char *num2, int *result, int len1, int len2)
 }
 
 /**
- * initialize_array - initializes all cells of the array to 0
+ * initialize_array - Initializes an array with 0
+ *
  * @array: array to initialize
  * @size: size of the array
  */
@@ -126,7 +136,8 @@ void initialize_array(int *array, int size)
 }
 
 /**
- * print_result - print the result of the product
+ * print_result - Prints the result of the multiplication
+ *
  * @array: array containing the result
  * @size: size of the array
  */

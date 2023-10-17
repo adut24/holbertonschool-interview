@@ -1,11 +1,13 @@
 #include "binary_trees.h"
 
 /**
- * sorted_array_to_avl - Transforms an array into an AVL tree
- * @array: array to transform
- * @size: size of the array
- * Return: NULL or a pointer to the root
-*/
+ * sorted_array_to_avl - Transforms a sorted array into a balanced AVL tree
+ *
+ * @array: Pointer to the first element of the sorted array of integers
+ * @size: Number of elements in the array
+ *
+ * Return: Pointer to the root node of the tree, or NULL if the array is empty
+ */
 avl_t *sorted_array_to_avl(int *array, size_t size)
 {
 	return (sorted_array_to_avl_recursive(array, 0, size - 1));
@@ -13,9 +15,11 @@ avl_t *sorted_array_to_avl(int *array, size_t size)
 
 /**
  * add_node - Adds a node to the AVL tree
- * @n: number to add to the node
- * Return: NULL or the new node
-*/
+ *
+ * @n: The value to add to the node
+ *
+ * Return: A pointer to the new node, or NULL if the node could not be created.
+ */
 avl_t *add_node(int n)
 {
 	avl_t *node = malloc(sizeof(avl_t));
@@ -32,12 +36,14 @@ avl_t *add_node(int n)
 }
 
 /**
- * sorted_array_to_avl_recursive - Creates and sorts the AVL tree
- * @array: array to transform
- * @start: starting index
- * @end: Ending index
- * Return: NULL or a pointer to the root
-*/
+ * sorted_array_to_avl_recursive - Creates an AVL tree from a sorted array
+ *
+ * @array: Pointer to the first element of the sorted array
+ * @start: The starting index of the subarray to be processed
+ * @end: The ending index of the subarray to be processed
+ *
+ * Return: A pointer to the root of the AVL tree, or NULL if an error occurred
+ */
 avl_t *sorted_array_to_avl_recursive(int *array, int start, int end)
 {
 	int mid = (start + end) / 2;

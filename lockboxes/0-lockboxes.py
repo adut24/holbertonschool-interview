@@ -3,7 +3,15 @@
 
 
 def canUnlockAll(boxes):
-    """Returns True if all boxes can be opened or False if not"""
+    """
+    Determines if all the boxes in a list of boxes can be unlocked.
+
+    Args:
+    - boxes (list): boxes and their keys
+
+    Returns:
+    - bool: True if all boxes can be unlocked, False otherwise
+    """
     open_boxes = {0: True}
     for i in range(len(boxes)):
         if i not in open_boxes.keys():
@@ -13,7 +21,18 @@ def canUnlockAll(boxes):
 
 
 def unlockBoxes(boxes, open_boxes, index):
-    """Unlock the boxes which had their keys in boxes[index]"""
+    """
+    Recursively unlocks boxes in a list of boxes.
+
+    Args:
+    - boxes (list): all boxes and their keys
+    - open_boxes (dict): state of each box
+    - index (int): index of the box to be opened
+
+    Returns:
+    - dict: updated state of each box
+    """
+
     if open_boxes.get(index):
         for key in boxes[index]:
             is_opened = open_boxes.get(key)

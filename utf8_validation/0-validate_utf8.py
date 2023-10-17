@@ -3,7 +3,15 @@
 
 
 def validUTF8(data):
-    """Checks if the data set given is a valid UTF-8 encoding"""
+    """
+    Determines if a given data set represents a valid UTF-8 encoding.
+
+    Args:
+    - data (list): integers representing the bytes of the data set
+
+    Returns:
+    - bool: True if the data set represents a valid UTF-8 encoding, else False
+    """
     num_bytes = 0
     for byte in data:
         # Check if the byte is a continuation byte

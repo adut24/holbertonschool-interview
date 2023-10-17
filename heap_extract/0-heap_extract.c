@@ -1,9 +1,11 @@
 #include "binary_trees.h"
 
 /**
- * heap_extract - Extracts the root and restores the Max Heap property.
- * @root: A pointer to the root node.
- * Return: The extracted value.
+ * heap_extract - Extracts the root node of a Max Binary Heap.
+ *
+ * @root: A pointer to the root node of the heap.
+ *
+ * Return: The value stored in the root node, or 0 on failure.
  */
 int heap_extract(heap_t **root)
 {
@@ -39,7 +41,8 @@ int heap_extract(heap_t **root)
 }
 
 /**
- * free_node - frees the node passed as a parameter
+ * free_node - Frees a node from memory.
+ *
  * @node: node to free
  */
 void free_node(heap_t *node)
@@ -58,7 +61,8 @@ void free_node(heap_t *node)
 }
 
 /**
- * heapify_down - Restores the heap property by moving down the tree.
+ * heapify_down - Heapifies a heap from the root down.
+ *
  * @node: The node to start heapifying from.
  */
 void heapify_down(heap_t *node)
@@ -82,9 +86,11 @@ void heapify_down(heap_t *node)
 }
 
 /**
- * find_last_node - Finds the last node in the heap.
+ * find_last_node - Finds the last node in a heap.
+ *
  * @node: The starting node.
- * Return: The last node.
+ *
+ * Return: The last node in the heap.
  */
 heap_t *find_last_node(heap_t *node)
 {

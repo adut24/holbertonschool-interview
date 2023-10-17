@@ -1,10 +1,19 @@
 #!/usr/bin/python3
-"""0-count module"""
+"""Module to count the occurrences of words in the titles of hot posts"""
 import requests
 
 
 def count_words(subreddit, word_list, after='', count={}):
-    """Counts the number of occurences of word_list's words."""
+    """
+    Recursively counts the occurrences of a list of words in the titles of
+    the hot posts of a subreddit.
+
+    Args:
+    - subreddit (str): the name of the subreddit to search in
+    - word_list (list): words to search for in the titles
+    - after (str): token to paginate through the subreddit's posts
+    - count (dict): store the count of each word in the titles
+    """
     url = 'https://www.reddit.com/r/{}/hot.json'.format(subreddit)
     if after != '':
         url += '?after={}'.format(after)
@@ -22,7 +31,13 @@ def count_words(subreddit, word_list, after='', count={}):
 
 
 def print_result(count):
-    """Prints the result of the search."""
+    """
+    Prints the count of each key in the given dictionary in descending
+    order of count.
+
+    Args:
+    - count (dict): words searched for and their respective counts
+    """
     sorted_dict = dict(sorted(count.items(), key=lambda x: x[1], reverse=True))
     for key, value in sorted_dict.items():
         if value > 0:
@@ -30,7 +45,15 @@ def print_result(count):
 
 
 def check_titles(count, word_list, posts):
-    """Check if the titles contain words from word_list."""
+    """
+    Count the occurrences of words from a given list in the titles of a list
+    of Reddit posts.
+
+    Args:
+    - count (dict): store the word counts
+    - word_list (list): words to search for
+    - posts (list): Reddit posts
+    """
     for post in posts:
         for word in post.get('data').get('title').lower().split():
             if word in [keyword.lower() for keyword in word_list]:

@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Module reading stdin and computing metrics"""
+"""Module to parse a log file"""
 import signal
 import sys
 
@@ -19,12 +19,20 @@ file_size = 0
 
 
 def signal_handler(sig, frame):
-    """Handle when CTRL + C is pressed"""
+    """
+    Prints the stats obtained from the file when a keyboard interrupt occurs.
+
+    Args:
+    - sig: The signal number
+    - frame: The current stack frame
+    """
     print_infos()
 
 
 def print_infos():
-    """Prints the stats obtained from the file"""
+    """
+    Prints the file size and statistics for a given log file.
+    """
     print("File size: {}".format(file_size))
     for key, value in sorted(stats.items()):
         if value != 0:

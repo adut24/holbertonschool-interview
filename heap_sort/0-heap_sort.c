@@ -2,8 +2,9 @@
 #include <unistd.h>
 
 /**
- * heap_sort - Sorts an array of integers using the Heap sort algorithm
- * @array: array of integers to sort
+ * heap_sort - Sorts an array of integers in ascending order
+ *
+ * @array: array of integers
  * @size: size of the array
 */
 void heap_sort(int *array, size_t size)
@@ -26,6 +27,7 @@ void heap_sort(int *array, size_t size)
 
 /**
  * heapify_array - Transforms the array into a Max Heap tree
+ *
  * @array: array of integer
  * @size: size of the array to heapify
  * @index: current index
@@ -55,6 +57,7 @@ void heapify_array(int *array, size_t size, size_t index, size_t originalSize)
 
 /**
  * swap_value - Swaps the value between 2 nodes
+ *
  * @a: first integer
  * @b: second integer
 */

@@ -1,9 +1,18 @@
 #!/usr/bin/python3
-"""0-making_change module"""
+"""Module to make change using the fewest number of coins"""
 
 
 def makeChange(coins, total):
-    """Count the number of coin needed to hand the change"""
+    """
+    Determines the fewest number of coins needed to meet a given total.
+
+    Args:
+    - coins (list): integers representing the coin denominations
+    - total (int): the total amount of money
+
+    Returns:
+    - int: the minimum number of coins needed to make the change
+    """
     if total <= 0:
         return 0
     coins_needed = [float('inf')] * (total + 1)

@@ -2,8 +2,10 @@
 
 /**
  * add_node_end - Add a node at the end of the list
+ *
  * @list: Double linked list
  * @str: string to copy
+ *
  * Return: NULL in case of failure or the address of the new node
  */
 List *add_node_end(List **list, char *str)
@@ -42,8 +44,10 @@ List *add_node_end(List **list, char *str)
 
 /**
  * add_node_begin - Add a node at the beginning of the list
+ *
  * @list: Double linked list
  * @str: string to copy
+ *
  * Return: NULL in case of failure or the address of the new node
  */
 List *add_node_begin(List **list, char *str)
@@ -81,8 +85,10 @@ List *add_node_begin(List **list, char *str)
 }
 
 /**
- * create_node - creates a new node in the list
+ * create_node - Create a new node
+ *
  * @str: string to copy in the node
+ *
  * Return: NULL in case of failure or the new node
  */
 List *create_node(char *str)

@@ -1,10 +1,17 @@
 #!/usr/bin/python3
-"""Solves the N-Queens problem"""
+"""Module to solve the N-Queens problem"""
 import sys
 
 
 def add_solution(board, result, n):
-    """Adds the queens positions"""
+    """
+    Adds a solution to the result list.
+
+    Args:
+    - board (list): the current state of the board
+    - result (list): all valid solutions
+    - n (int): the size of the board
+    """
     temp = []
     for i in range(n):
         for j in range(n):
@@ -14,7 +21,18 @@ def add_solution(board, result, n):
 
 
 def is_safe(row, col, board, n):
-    """Checks if the queen position is safe from being attacked"""
+    """
+    Determines if it is safe to place a queen at a given position on the board.
+
+    Args:
+    - row (int): the row to check
+    - col (int): the column to check
+    - board (list): the current state of the board
+    - n (int): the size of the board
+
+    Returns:
+    - bool: True if it is safe to place a queen at the position, else False
+    """
     x = row
     while x >= 0:
         if board[x][col] == 1:
@@ -38,7 +56,15 @@ def is_safe(row, col, board, n):
 
 
 def solve_nqueens(row, result, board, n):
-    """Solves the N-Queens problem"""
+    """
+    Recursively solve the N-Queens problem for a given row and board size.
+
+    Args:
+    - row (int): the current row being processed
+    - result (list): the solutions found
+    - board (list): the current state of the board
+    - n (int): the size of the board
+    """
     if row == n:
         add_solution(board, result, n)
         return

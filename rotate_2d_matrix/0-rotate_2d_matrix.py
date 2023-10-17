@@ -3,7 +3,12 @@
 
 
 def rotate_2d_matrix(matrix):
-    """Rotates a 2D matrix"""
+    """
+    Rotates a 2D matrix 90 degrees clockwise in place.
+
+    Args:
+    - matrix (list): a list of lists representing a 2D matrix
+    """
     length = len(matrix[0])
     for i in range(length // 2):
         for j in range(i, length - i - 1):

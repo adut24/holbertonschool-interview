@@ -1,12 +1,16 @@
 #!/usr/bin/python3
-"""
-Module calculating square units of water
-"""
+"""Module to calculate how much water will be retained after it rains"""
 
 
 def rain(walls):
     """
-    Calculates how many square units of water will be retained after it rains.
+    Calculates the amount of water that can be trapped between walls.
+
+    Args:
+    - walls (list): integers representing the height of walls
+
+    Returns:
+    - int: The total amount of water that can be trapped between the walls
     """
     result = 0
     walls_length = len(walls)

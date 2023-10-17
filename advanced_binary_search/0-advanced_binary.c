@@ -2,11 +2,13 @@
 #include <stdio.h>
 
 /**
- * advanced_binary - Searches for the value with a binary search
- * @array: array to search
- * @size: size of the array
- * @value: value to search for
- * Return: -1 or the index of the value
+ * advanced_binary - Searches for the value with a binary search algorithm.
+ *
+ * @array: Pointer to the first element of the array to search.
+ * @size: Number of elements in the array.
+ * @value: Value to search for.
+ *
+ * Return: The index of the first occurrence of the value in the array, or -1
  */
 int advanced_binary(int *array, size_t size, int value)
 {
@@ -16,13 +18,15 @@ int advanced_binary(int *array, size_t size, int value)
 }
 
 /**
- * binary_recursion - Executes the binary search in recursion
+ * binary_recursion - Executes the binary search algorithm recursively.
+ *
  * @array: array to search
  * @size: size of the array
  * @low: first index to look at
  * @high: last index to look at
  * @value: value to search for
- * Return: -1 or the index of the value
+ *
+ * Return: The index of the first occurrence of the value in the array, or -1
  */
 int binary_recursion(int *array, size_t size, size_t low, size_t high,
 					 int value)
@@ -47,6 +51,7 @@ int binary_recursion(int *array, size_t size, size_t low, size_t high,
 
 /**
  * print_array - Prints the part of the array that is being searched
+ *
  * @array: array to print
  * @start: starting index
  * @end: ending index
