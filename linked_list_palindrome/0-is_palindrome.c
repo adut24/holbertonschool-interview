@@ -2,8 +2,10 @@
 
 /**
  * is_palindrome - checks if a linked list is a palindrome
+ *
  * @head: linked list
- * Return: 1 if it's a palindrome or 0 if not.
+ *
+ * Return: 1 if it is a palindrome, 0 if it is not a palindrome
  */
 int is_palindrome(listint_t **head)
 {
@@ -11,10 +13,12 @@ int is_palindrome(listint_t **head)
 }
 
 /**
- * check_linked_list - checks if a linked list is a palindrome
- * @left: linked list
- * @right: pointer to a node
- * Return: 1 if it's a palindrome or 0 if not.
+ * check_linked_list - checks the linked list recursively
+ *
+ * @left: pointer to the left node
+ * @right: pointer to the right node
+ *
+ * Return: 1 if it is a palindrome, 0 if it is not a palindrome
  */
 int check_linked_list(listint_t **left, listint_t *right)
 {

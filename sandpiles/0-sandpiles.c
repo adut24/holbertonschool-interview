@@ -2,6 +2,7 @@
 
 /**
  * sandpiles_sum - computes the sum of two sandpiles
+ *
  * @grid1: first sandpile
  * @grid2: second sandpile
  */
@@ -36,7 +37,8 @@ void sandpiles_sum(int grid1[3][3], int grid2[3][3])
 }
 
 /**
- * is_stable_sandpile - checks if the sandpile is stable or not
+ * is_stable_sandpile - checks if a sandpile is stable
+ *
  * @grid: sandpile to check
  * Return: 1 if it's stable or 0 if not
  */
@@ -56,7 +58,8 @@ int is_stable_sandpile(int grid[3][3])
 }
 
 /**
- * copy_sandpile - copy the content of a sandpile
+ * copy_sandpile - copies a sandpile
+ *
  * @src: sandpile to copy
  * @dst: sandpile to receive the copy
  */
@@ -72,7 +75,8 @@ void copy_sandpile(int src[3][3], int dst[3][3])
 }
 
 /**
- * sandpile_toppling - topple a cell from the sandpile
+ * sandpile_toppling - topples a cell of a sandpile
+ *
  * @grid1: sandpile to topple
  * @grid2: copy of the sandpile
  * @row: index of the row of the cell to topple
@@ -103,9 +107,9 @@ void sandpile_toppling(int grid1[3][3], int grid2[3][3], int row, int column)
 }
 
 /**
- * print_grid - Print 3x3 grid
- * @grid: 3x3 grid
+ * print_grid - prints a 3x3 grid
  *
+ * @grid: grid to print
  */
 static void print_grid(int grid[3][3])
 {

@@ -1,9 +1,11 @@
 #include "palindrome.h"
 
 /**
- * is_palindrome - checks if a number is a palindrome or not
+ * is_palindrome - checks if a number is a palindrome.
+ *
  * @n: number to check
- * Return: 1 if it's a palindrome or 0 if not.
+ *
+ * Return: 1 if n is a palindrome, and 0 otherwise
 */
 int is_palindrome(unsigned long n)
 {
@@ -11,9 +13,11 @@ int is_palindrome(unsigned long n)
 }
 
 /**
- * reverse_number - Reverse a number.
+ * reverse_number - reverses a number.
+ *
  * @n: number to reverse
- * Return: the number n reversed.
+ *
+ * Return: reversed number
 */
 unsigned long reverse_number(unsigned long n)
 {

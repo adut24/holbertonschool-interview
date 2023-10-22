@@ -1,11 +1,13 @@
 #include "slide_line.h"
 
 /**
- * slide_line - Slides and merges the line
+ * slide_line - slides and merges an array of integers
+ *
  * @line: array of number
  * @size: size of the array
  * @direction: direction to slide to (left or right)
- * Return: 1 upon success or 0
+ *
+ * Return: 1 if success, 0 if failure
  */
 int slide_line(int *line, size_t size, int direction)
 {
@@ -19,10 +21,12 @@ int slide_line(int *line, size_t size, int direction)
 }
 
 /**
- * slide_left - Slides the line to the left
+ * slide_left - slides and merges an array of integers to the left
+ *
  * @line: array of number
  * @size: size of the array
- * Return: 1 upon success
+ *
+ * Return: 1 if success, 0 if failure
  */
 int slide_left(int *line, size_t size)
 {
@@ -60,10 +64,12 @@ int slide_left(int *line, size_t size)
 }
 
 /**
- * slide_right - Slides the line to the right
+ * slide_right - slides and merges an array of integers to the right
+ *
  * @line: array of number
  * @size: size of the array
- * Return: 1 upon success
+ *
+ * Return: 1 if success, 0 if failure
  */
 int slide_right(int *line, size_t size)
 {

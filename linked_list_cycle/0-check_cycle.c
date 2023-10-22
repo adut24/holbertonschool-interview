@@ -1,9 +1,11 @@
 #include "lists.h"
 
 /**
- * check_cycle - Check if the linked list contains a loop or not
+ * check_cycle - checks if a linked list has a cycle in it
+ *
  * @list: linked list
- * Return: 1 if there's a loop or 0 if not
+ *
+ * Return: 0 if there is no cycle, 1 if there is a cycle
 */
 int check_cycle(listint_t *list)
 {

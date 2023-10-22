@@ -1,7 +1,9 @@
 #include "sort.h"
 
 /**
- * merge_sort - sorts the array using the merge algorithm
+ * merge_sort - sorts an array of integers in ascending order using the
+ * Merge Sort algorithm
+ *
  * @array: array to sort
  * @size: size of the array
  */
@@ -21,7 +23,8 @@ void merge_sort(int *array, size_t size)
 }
 
 /**
- * merge - "merges" the array in a sorted way
+ * merge - merges two sub-arrays into one sorted array
+ *
  * @array: original array
  * @work_array: array to work on
  * @left_start: starting index of the left sub-array
@@ -67,6 +70,7 @@ void merge(int *array, int *work_array, size_t left_start, size_t left_end,
 
 /**
  * merge_sort_recursive - applies the merge sort algorithm recursively
+ *
  * @array: original array
  * @work_array: array to work on
  * @start: starting index
@@ -87,7 +91,8 @@ void merge_sort_recursive(int *array, int *work_array, size_t start,
 }
 
 /**
- * copy_array - copies an array into another one
+ * copy_array - copies an array
+ *
  * @src: source array
  * @dest: destination array
  * @start: starting index
@@ -102,7 +107,8 @@ void copy_array(int *src, int *dest, size_t start, size_t end)
 }
 
 /**
- * print_work_array - prints the array the algorithm is working on
+ * print_work_array - prints an array
+ *
  * @array: array to print
  * @start: starting index
  * @end: ending index

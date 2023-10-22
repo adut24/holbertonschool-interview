@@ -1,8 +1,9 @@
 #include "sort.h"
 
 /**
- * radix_sort - sorts an array of integers using the Radix sort algorithm
- * @array: integer array to sort
+ * radix_sort - sorts an array of integers in ascending order
+ *
+ * @array: array to sort
  * @size: size of the array
  */
 void radix_sort(int *array, size_t size)
@@ -23,9 +24,11 @@ void radix_sort(int *array, size_t size)
 
 /**
  * get_max - gets the max value in the array
+ *
  * @array: array of int
  * @size: size of the array
- * Return: the max value in the array
+ *
+ * Return: max value in the array
  */
 int get_max(int *array, size_t size)
 {
@@ -42,7 +45,8 @@ int get_max(int *array, size_t size)
 }
 
 /**
- * copy_array - copies the array src to dest
+ * copy_array - copies the content of an array to another array
+ *
  * @src: source array
  * @dest: destination array
  * @size: size of the arrays
@@ -56,7 +60,8 @@ void copy_array(int *src, int *dest, size_t size)
 }
 
 /**
- * sort - sorts the array using LSD radix sort
+ * sort - sorts an array of integers in ascending order
+ *
  * @array: array of int
  * @size: size of the array
  * @exp: power of ten to find the significant digit
