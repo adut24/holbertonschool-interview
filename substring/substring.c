@@ -12,7 +12,7 @@
  * Return: 1 if the substring is valid, otherwise 0
  */
 int is_valid_substring(char const *s, char const **words, int word_len,
-					   int nb_words, int start)
+					int nb_words, int start)
 {
 	int index, i, j;
 	char *word;
@@ -39,6 +39,7 @@ int is_valid_substring(char const *s, char const **words, int word_len,
 				break;
 			}
 		}
+		free (word);
 	}
 
 	for (i = 0; i < nb_words; i++)
