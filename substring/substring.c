@@ -15,13 +15,21 @@ int is_valid_substring(char const *s, char const **words, int word_len,
 					   int nb_words, int start)
 {
 	int index, i, j;
-	int *word_count = calloc(nb_words, sizeof(int));
 	char *word;
+	int *word_count = calloc(nb_words, sizeof(int));
+
+	if (!word_count)
+		return (0);
 
 	for (i = 0; i < nb_words; i++)
 	{
 		index = start + i * word_len;
 		word = strdup(s + index);
+		if (!word)
+		{
+			free(word_count);
+			return (0);
+		}
 
 		for (j = 0; j < nb_words; j++)
 		{
@@ -38,12 +46,12 @@ int is_valid_substring(char const *s, char const **words, int word_len,
 		if (word_count[i] == 0)
 		{
 			free(word_count);
-			return 0;
+			return (0);
 		}
 	}
 
 	free(word_count);
-	return 1;
+	return (1);
 }
 
 /**
@@ -63,6 +71,9 @@ int *find_substring(char const *s, char const **words, int nb_words, int *n)
 	int count = 0, i;
 	int *indices = malloc(s_len * sizeof(int));
 
+	if (!indices)
+		return (NULL);
+
 	for (i = 0; i <= s_len - substr_len; i++)
 	{
 		if (is_valid_substring(s, words, word_len, nb_words, i))
@@ -73,9 +84,9 @@ int *find_substring(char const *s, char const **words, int nb_words, int *n)
 	if (count == 0)
 	{
 		free(indices);
-		return NULL;
+		return (NULL);
 	}
 
 	indices = realloc(indices, count * sizeof(int));
-	return indices;
+	return (indices);
 }
