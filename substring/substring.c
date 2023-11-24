@@ -21,7 +21,7 @@ int is_valid_substring(char const *s, char const **words, int word_len,
 	for (i = 0; i < nb_words; i++)
 	{
 		index = start + i * word_len;
-		*word = strdup(s + index);
+		word = strdup(s + index);
 
 		for (j = 0; j < nb_words; j++)
 		{
