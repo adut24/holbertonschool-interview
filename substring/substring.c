@@ -39,7 +39,7 @@ int is_valid_substring(char const *s, char const **words, int word_len,
 				break;
 			}
 		}
-		free (word);
+		free(word);
 	}
 
 	for (i = 0; i < nb_words; i++)
