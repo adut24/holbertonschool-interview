@@ -15,6 +15,8 @@ def isWinner(x, nums):
     Return:
     - str: name of player that won most rounds
     """
+    if x <= 0:
+        return None
     result = {'Maria': 0, 'Ben': 0}
     for n in nums:
         primes = generate_primes(n)
