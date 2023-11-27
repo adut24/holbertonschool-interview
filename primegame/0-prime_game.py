@@ -16,19 +16,13 @@ def isWinner(x, nums):
     - str: name of player that won most rounds
     """
     result = {'Maria': 0, 'Ben': 0}
-    for i in range(x):
-        numbers = [n for n in range(1, nums[i] + 1)]
-        if numbers == [1]:
+    for n in nums:
+        primes = generate_primes(n)
+        turn = len(primes) % 2
+        if turn == 1:
+            result['Maria'] += 1
+        else:
             result['Ben'] += 1
-            continue
-        j = 0
-        choice = 2
-        while numbers != [1]:
-            turn = 'Maria' if j % 2 == 0 else 'Ben'
-            numbers = [n for n in numbers if n % choice != 0]
-            choice = get_next_prime(choice)
-            j += 1
-        result[turn] += 1
     if result['Maria'] > result['Ben']:
         return 'Maria'
     elif result['Ben'] > result['Maria']:
@@ -36,20 +30,7 @@ def isWinner(x, nums):
     return None
 
 
-def is_prime(x):
-    """
-    Checks if number is prime
-
-    Args:
-    - x: number
-
-    Return:
-    - bool: True if number is prime, False otherwise
-    """
-    return all(x % i for i in range(2, x))
-
-
-def get_next_prime(x):
+def generate_primes(n):
     """
     Returns next prime number after x
 
@@ -59,4 +40,12 @@ def get_next_prime(x):
     Return:
     - int: next prime number after x
     """
-    return min([a for a in range(x + 1, 2 * x) if is_prime(a)])
+    sieve = [True] * (n+1)
+    p = 2
+    while p * p <= n:
+        if sieve[p]:
+            for i in range(p * p, n+1, p):
+                sieve[i] = False
+        p += 1
+    primes = [p for p in range(2, n+1) if sieve[p]]
+    return primes
