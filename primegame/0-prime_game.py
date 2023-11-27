@@ -34,20 +34,20 @@ def isWinner(x, nums):
 
 def generate_primes(n):
     """
-    Returns next prime number after x
+    Returns next prime number after n
 
     Args:
-    - x: number
+    - n: number
 
     Return:
-    - int: next prime number after x
+    - int: next prime number after n
     """
-    sieve = [True] * (n+1)
+    sieve = [True] * (n + 1)
     p = 2
     while p * p <= n:
         if sieve[p]:
-            for i in range(p * p, n+1, p):
+            for i in range(p * p, n + 1, p):
                 sieve[i] = False
         p += 1
-    primes = [p for p in range(2, n+1) if sieve[p]]
+    primes = [p for p in range(2, n + 1) if sieve[p]]
     return primes
